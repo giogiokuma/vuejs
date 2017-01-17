@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Coordinate event</title>
+  <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <!--<button v-on:click="changeLink">Click to Change Link</button>-->
+  <!--v-on => ショートカット-->
+  <button@click="changeLink">Click to Change Link</button>
+  <!--<a v-bind:href="ink">Link</a>-->
+  <!--ショートカット-->
+  <a :href="ink">Link</a>
+</div>
+  
+<script>
+new Vue({
+  el:'#app',
+  data: {
+    link: 'http://google.com'
+  },
+  methods: {
+    changeLink: function() {
+      this.link = 'http://apple.com'
+    }
+  }
+});
+
+</script>
+</body>
+</html>
