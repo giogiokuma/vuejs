@@ -1,28 +1,27 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Test Vue</title>
+    <title>Test VueJS</title>
     <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
-
 </head>
 <body>
 <div id="app">
     <button v-on:click="increase(2, $event)">Click me</button>
     <p>{{ counter }}</p>
-    <p v-on:mousemove="updateCoordinates">Coordinate: {{ x }} / {{ y }}
-    - <span v-on:mousemove.stop="">DEAD SPOT</span>
-    </p>
-    <input type="text" v-on:keyup.enter.space="alertMe">
+    <p v-on:mousemove="updateCoordinates">Coordinate: {{ x }} / {{ y }}</p>
 </div>
+    
 
 <script>
 new Vue({
     el: '#app',
     data: {
         counter: 0,
-        x:0,
-        y: 0,
+        x: 0,
+        y: 0
     },
     methods: {
         increase: function(step, event) {
@@ -31,12 +30,9 @@ new Vue({
         updateCoordinates: function(event) {
             this.x = event.clientX;
             this.y = event.clientY;
-        },
-        alertMe: function() {
-            alert("Alert!");
         }
     }
-})
+});
 
 </script>
 </body>
