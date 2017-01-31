@@ -1,55 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
-<style>
-  .demo {
-    width:100px;
-    height: 100px;
-    background-color:gray;
-    display: inline-block;
-    margin:10px;
-  }
-  .red {
-    background-color:red;
-  }
-  .blue {
-    background-color:blue;
-  }
-  .green {
-    background-color:green;
-  }
-</style>
+    <meta charset="UTF-8">
+    <title>Coordinate event</title>
+    <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
 </head>
 <body>
-  <div id="app">
- <div class="demo"
-  @click="attachRed = !attachRed"
-  :class="divClasses"></div>
- <div class="demo" :class="{red: attachRed}"></div>
- <div class="demo" :class="[color, {red: attachRed}]"></div>
- 
-  <input type="text" v-model="color">
-  </div>
- <script>
-new Vue({
+<div id="app">
+  <button @click="changeLink">Click to Change Link</button>    
+  <a :href="link">Link</a>
+</div>
 
-  el: '#app',
+<script>
+new Vue({
+  el: '#app', 
   data: {
-    attachRed: false,
-    color:'green'
+    link: 'http://google.com'
   },
-  computed: {
-    divClasses: function() {
-      return {
-        red: this.attachRed,
-        blue: !this.attachRed
-      };
+  methods: {
+    changeLink: function() {
+        this.link = "http://apple.com"
     }
   }
 });
- </script>
+
+
+
+
+</script>
+
 </body>
 </html>
