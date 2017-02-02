@@ -6,49 +6,51 @@
     <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
 </head>
 <body>
+
 <div id="app1">
-<h1>{{ title }}</h1>
-<button v-on:click="show">Show Paragraph</button>
-<p v-if="showParagraph">This is not always visible</p>
+  <h1>{{ title }}</h1>
+  <button @click="show">Show Paragraph</button>
+  <p v-if="showParagraph">This is not always visible </p>
 </div>
 <div id="app2">
-<h1>{{ title }}</h1>    
+  <h1>{{ title }}</h1>
 </div>
-
 <script>
 new Vue({
-el: '#app1',
-data: {
+  el: '#app1',
+  data: {
     title: 'The VueJS Instance',
-    showParagraph: false 
- },
- methods: {
-    show: function() {
+    showParagraph: false
+  },
+  methods: {
+    show:function() {
         this.showParagraph = true;
         this.updateTitle('The VueJS Instance (Updated)')
-    },
+    }, 
+
     updateTitle: function(title) {
-        this.title = title;
+        this.title = title; 
     }
- },
- computed: {
-    lowercaseTitle: function() {
-        return this.title.roLowerCase();
+  }, 
+
+  computed: {
+    lowercaseTitle : function() {
+        return this.title.roLowerCase(); 
     }
- },
- watch: {
-    title: function(value){
-        alert('Title changed, new value: ' + value);
+  },
+  watch: {
+    title: function(value) {
+        alert('Title changed, new value: ' + value); 
     }
- }
+  }
 });
 
 new Vue({
     el:'#app2',
     data: {
-        title: 'The second Instance'
+        title:'The second Instancd '
     }
-})
+});
 
 </script>
 </body>
