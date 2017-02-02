@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
 </head>
 <body>
-  <div id="app1">
+
+<div id="app1">
     <h1>{{ title }}</h1>
     <button v-on:click="show">Show Paragraph</button>
     <p v-if="showParagraph">This is not always visible</p>
-  </div>
-    <div id="app2">
+</div>
+<div id="app2">
     <h1>{{ title }}</h1>
     <button @click="onChange">Change something in Vue 1</button>
-  </div>
+</div>
 
- <script>
+
+<script>
 var vm1 = new Vue({
 
   el: '#app1',
@@ -45,23 +47,21 @@ var vm1 = new Vue({
   }
 
 });
-setTimeout(function() {
-   vm1.title = 'Changed by Timer';
-}, 3000);
-
-
 
 var vm2 = new Vue({
-  el: '#app2',
-  data: {
-    title: 'The second Instance'
-  },
-  methods: {
-    onChange: function() {
-      vm1.title = 'Changed';
+    el: '#app2',
+    data: {
+        title: 'The second Instance'
+    },
+    methods: {
+        onChange: function() {
+            vm1.title = 'Changed'; 
+        }
     }
-  }
 })
- </script>
+
+
+
+</script>
 </body>
 </html>
