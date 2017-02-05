@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app1">
+    <h1>{{ title }}</h1>
+
+    <button @click="title = 'Changed'">Update Title</button>
+    <button @click="destroy">Destroy</button>
+  </div>
+ <script>
+
+
+
+var vm1 = new Vue({
+  el: '#app1',
+  data: {
+    title: 'The VueJS Instance',
+  },
+  beforeCreate: function() {
+    console.log('beforeCreate()');
+  },
+  
+  created: function() {
+    console.log('created()');
+  },
+  beforeMount: function() {
+    console.log('beforeMount()');
+  },
+  mounted: function() {
+    console.log('mounted()');
+  },
+  beforeUpdate: function() {
+    console.log('beforeUpdate()');
+  },
+  beforeCreate:function() {
+    console.log('beforeCreate()');
+  },
+  updated: function() {
+    console.log('updated()');
+  },
+  beforeDestroy: function() {
+    console.log('beforeDestroy()');
+  },
+  destroyed: function() {
+    console.log('destroyed()');
+  },
+  methods: {
+    destroy: function() {
+      this.$destroy(); 
+    }
+  }
+});
+ </script>
+</body>
+</html>

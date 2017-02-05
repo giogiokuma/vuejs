@@ -1,0 +1,10 @@
+
+**The Vue Instance  Vue インスタンス**
+
+コンストラクター
+https://vuejs.org/v2/guide/instance.html
+
+---------------
+
+**リアクティビティの説明**
+https://vuejs.org/v2/guide/reactivity.html
