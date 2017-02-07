@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <my-cmp></my-cmp>
+  <hr>
+    <my-cmp></my-cmp>
+  </div>
+
+  <script>
+var data = { status: 'Critical' };
+
+  Vue.component('my-cmp', {
+    data: function() {
+      return {
+        status: 'Critical'
+      };
+    },
+    template: '<p>Server Status: {{ status }} (<button @click="changeStatus">Change</button>)</p>',
+    methods: {
+      changeStatus: function() {
+        this.status = 'Normal'; 
+      }
+    }
+  }); 
+
+new Vue({
+
+  el: '#app'
+  
+})
+  </script>
+</body>
+</html>
