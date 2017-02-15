@@ -6,16 +6,12 @@
   <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
 </head>
 <body>
-  <div id="app1">
-    <h1>{{ title }}</h1>
-
-    <button @click="title = 'Changed'">Update Title</button>
-    <button @click="destroy">Destroy</button>
-  </div>
+<div id="app1">
+   <h1>{{ title }}</h1>
+   <button @click="title='Changed'">Update Title</button>
+   <button @click="destroy">Destroy</button>
+</div>
  <script>
-
-
-
 var vm1 = new Vue({
   el: '#app1',
   data: {
@@ -55,6 +51,10 @@ var vm1 = new Vue({
     }
   }
 });
+
+
+
+
  </script>
 </body>
 </html>
